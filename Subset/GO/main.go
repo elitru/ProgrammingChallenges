@@ -35,6 +35,10 @@ func Input() int {
 		input, err := strconv.Atoi(in.Text())
 		HandleError(&err, &correct)
 		num = input
+		if correct && (num < 1 || num > 20) {
+			fmt.Println("Number must be between 1 and 20")
+			correct = false
+		}
 	}
 
 	return num
